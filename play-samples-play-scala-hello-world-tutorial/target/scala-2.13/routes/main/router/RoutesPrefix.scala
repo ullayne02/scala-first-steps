@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vtex/scala-first-steps/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Thu Jul 16 14:16:55 BRT 2020
+// @DATE:Mon Aug 03 12:47:46 BRT 2020
 
 
 package router {

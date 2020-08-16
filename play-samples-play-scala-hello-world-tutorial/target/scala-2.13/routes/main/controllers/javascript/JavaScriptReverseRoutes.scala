@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vtex/scala-first-steps/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Thu Jul 16 14:16:55 BRT 2020
+// @DATE:Mon Aug 03 12:47:46 BRT 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -10,60 +10,134 @@ import _root_.controllers.Assets.Asset
 // @LINE:7
 package controllers.javascript {
 
-  // @LINE:7
-  class ReverseHomeController(_prefix: => String) {
+  // @LINE:15
+  class ReverseShoppingLogController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:7
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
+    // @LINE:17
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ShoppingLogController.delete",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
+        function(id0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "shoppingLogs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
   
-    // @LINE:9
-    def tutorial: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.tutorial",
+    // @LINE:15
+    def findByKey: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ShoppingLogController.findByKey",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tutorial"})
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "shoppingLogs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
   
-    // @LINE:8
-    def explore: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.explore",
+    // @LINE:16
+    def insert: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ShoppingLogController.insert",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "explore"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "shoppingLogs"})
         }
       """
     )
   
   }
 
-  // @LINE:13
-  class ReverseAssets(_prefix: => String) {
+  // @LINE:12
+  class ReverseProductController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:13
-    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Assets.versioned",
+    // @LINE:14
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProductController.delete",
       """
-        function(file1) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        function(id0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "product/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:13
+    def insert: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProductController.insert",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "product"})
+        }
+      """
+    )
+  
+    // @LINE:12
+    def findById: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProductController.findById",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "product/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:7
+  class ReverseUserController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:11
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.delete",
+      """
+        function(id0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "user/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:7
+    def findByName: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.findByName",
+      """
+        function(name0) {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user/name/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0))})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:9
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "user"})
+        }
+      """
+    )
+  
+    // @LINE:10
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.update",
+      """
+        function(id0) {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "user/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )

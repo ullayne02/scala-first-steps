@@ -4,10 +4,14 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                                   controllers.HomeController.index
-GET     /explore                            controllers.HomeController.explore
-GET     /tutorial                           controllers.HomeController.tutorial
-
-
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /user/name/:name                    controllers.UserController.findByName(name: String)
+GET     /user/:id                           controllers.UserController.findByName(id: String)
+POST    /user                               controllers.UserController.create
+PUT     /user/:id                           controllers.UserController.update(id: String)
+DELETE  /user/:id                           controllers.UserController.delete(id: String)
+GET     /product/:id                        controllers.ProductController.findById(id: String)
+POST    /product                            controllers.ProductController.insert
+DELETE  /product/:id                        controllers.ProductController.delete(id: String)
+GET     /shoppingLogs/:id                   controllers.ShoppingLogController.findByKey(id: String)
+POST    /shoppingLogs                       controllers.ShoppingLogController.insert
+DELETE  /shoppingLogs/:id                   controllers.ShoppingLogController.delete(id: String)
